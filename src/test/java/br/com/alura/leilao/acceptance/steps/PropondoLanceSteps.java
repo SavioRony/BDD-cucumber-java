@@ -9,7 +9,6 @@ import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 
 import java.math.BigDecimal;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,13 +60,13 @@ public class PropondoLanceSteps {
         assertEquals(lances.get(1).getValor(), leilao.getLances().get(1).getValor());
     }
 
-    @Dado("um lance invalido de {double} reais")
-    public void um_lance_de_reais(Double valor) {
-
+    @Dado("um lance invalido de {double} reais e do usuario {string}")
+    public void um_lance_de_reais(Double valor, String nomeUsuario) {
+        this.lances.add(new Lance(new Usuario(nomeUsuario), new BigDecimal(valor)));
     }
     @Entao("o lance nao e aceito")
     public void o_lance_nao_e_aceito() {
-
+        assertEquals(0, leilao.getLances().size());
     }
 
 }
