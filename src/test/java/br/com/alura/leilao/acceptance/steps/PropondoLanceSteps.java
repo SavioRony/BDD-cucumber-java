@@ -60,4 +60,14 @@ public class PropondoLanceSteps {
         assertEquals(lances.get(0).getValor(), leilao.getLances().get(0).getValor());
         assertEquals(lances.get(1).getValor(), leilao.getLances().get(1).getValor());
     }
+
+    @Dado("um lance invalido de {double} reais")
+    public void um_lance_de_reais(Double valor) {
+
+    }
+    @Entao("o lance nao e aceito")
+    public void o_lance_nao_e_aceito() {
+
+    }
+
 }
