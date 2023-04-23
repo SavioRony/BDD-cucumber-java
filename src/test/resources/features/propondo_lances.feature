@@ -22,3 +22,11 @@ Esquema do Cenário: Propondo um lance invalido
     | valor | nomeUsuario |
     | 0     | Fulano      |
     | -1    | Beltrano    |
+
+Cenario: Propondo uma sequencia de lances
+  Dado dois lances
+    | valor | nomeUsuario |
+    | 10    | Fulano      |
+    | 15    | Fulano      |
+  Quando propoe varios lances ao leilao
+  Entao o segundo lance nao e aceito
